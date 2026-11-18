@@ -1,0 +1,305 @@
+/* ========== BASE.PHP ========== */
+
+
+/* ========== COLOR PALETTE & VARIABLES ========== */
+:root {
+        /* Main colors */
+        --primary-color: #3B82F6;          /* Bright Blue */
+        --primary-dark: #1D4ED8;           /* Darker Blue for hover states */
+        --primary-light: #DBEAFE;          /* Light Blue for highlights */
+        --secondary-color: #64748B;        /* Slate Grey */
+        --secondary-dark: #475569;         /* Darker Slate */
+        
+        /* Background colors */
+        --light-bg: #F8FAFC;               /* Light Background - smoother shade */
+        --dark-bg: #1E293B;                /* Dark Background */
+        
+        /* Text colors */
+        --text-primary: #1E293B;           /* Main text color */
+        --text-secondary: #64748B;         /* Secondary text color */
+        --text-light: #F8FAFC;             /* Light text color */
+        
+        /* Effects */
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --transition-fast: 0.2s ease;
+        --transition-normal: 0.3s ease;
+        --border-radius: 8px;
+    }
+    
+    /* ========== BASE STYLES ========== */
+    body {
+        font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+        color: var(--text-primary);
+        line-height: 1.7;
+        margin: 0;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+    }
+    
+    a:hover {
+        color: var(--primary-dark);
+        text-decoration: none;
+    }
+    
+/* ========== NAVBAR ========== */
+.navbar-standard {  /* Remplacer .navbar par .navbar-standard */
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    /* Les autres styles de navbar peuvent rester, mais remplacez les références à .navbar par .navbar-standard */
+    .navbar-standard .navbar-nav .nav-link {
+        color: var(--text-primary) !important;
+        padding: 10px 15px;
+        font-weight: 500;
+        position: relative;
+        transition: color var(--transition-fast);
+    }
+    
+    .navbar-standard .navbar-nav .nav-link:hover {
+        color: var(--primary-color) !important;
+    }
+    
+    .navbar-standard .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+    }
+    
+    .navbar-standard .navbar-nav .nav-link.active::after {
+        content: '';
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 5px;
+        height: 2px;
+        background-color: var(--primary-color);
+    }
+
+    .navbar-nav .nav-link {
+        color: var(--text-primary) !important;
+        padding: 10px 15px;
+        font-weight: 500;
+        position: relative;
+        transition: color var(--transition-fast);
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: var(--primary-color) !important;
+    }
+    
+    .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+    }
+    
+    .navbar-nav .nav-link.active::after {
+        content: '';
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 5px;
+        height: 2px;
+        background-color: var(--primary-color);
+    }
+    
+    .vr {
+        background-color: var(--primary-light) !important;
+        opacity: 0.7;
+    }
+    
+    /* Logo styling */
+    .sunuauto {
+        height: 60px;
+        width: auto;
+        transition: transform var(--transition-normal);
+    }
+    
+    .sunuauto:hover {
+        transform: scale(1.05);
+    }
+    
+    /* ========== CONTENT SECTIONS ========== */
+    .content-container {
+        padding-top: 120px; /* Increase this value to ensure content appears below navbar */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Fix for invisible content */
+.page-section {
+        opacity: 1;  /* Change from 0 to 1 */
+        transform: translateY(0);  /* Reset the transform */
+    }
+    
+    /* Keep the transition for when you add JS later */
+    .page-section.animated {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .page-section.animated.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .page-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .section-heading {
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-heading::after {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin-top: 10px;
+    }
+    
+    /* ========== FOOTER ========== */
+    footer {
+        margin-top: 50px;
+        padding: 60px 0 40px;
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+    }
+    
+    footer h5 {
+        color: white;
+        margin-bottom: 25px;
+        font-weight: 600;
+        font-size: 1.25rem;
+        position: relative;
+        padding-bottom: 12px;
+    }
+    
+    footer h5::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+    }
+    
+    footer a {
+        color: #A5B4FC;
+        text-decoration: none;
+        transition: color var(--transition-fast);
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    footer a:hover {
+        color: white;
+        text-decoration: none;
+    }
+    
+    footer .btn-outline-light {
+        border: 2px solid var(--primary-color);
+        color: white;
+        background-color: transparent;
+        padding: 10px 24px;
+        border-radius: var(--border-radius);
+        font-weight: 500;
+        transition: all var(--transition-normal);
+    }
+    
+    footer .btn-outline-light:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .social-icons a {
+        color: white;
+        font-size: 1.75rem;
+        transition: all var(--transition-normal);
+        opacity: 0.8;
+        margin-bottom: 0;
+    }
+    
+    .social-icons a:hover {
+        color: var(--primary-color);
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* ========== RESPONSIVE ADJUSTMENTS ========== */
+    @media (max-width: 992px) {
+        .page-section {
+            padding: 70px 0;
+        }
+        
+        .navbar {
+            padding: 10px 0;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .page-section {
+            padding: 50px 0;
+        }
+        
+        footer {
+            text-align: center;
+        }
+        
+        footer h5::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .social-icons {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        body {
+            font-size: 15px;
+        }
+        
+        .page-section {
+            padding: 40px 0;
+        }
+        
+        .sunuauto {
+            height: 50px;
+        }
+    }

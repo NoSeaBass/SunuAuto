@@ -1,0 +1,100 @@
+/* Carousel Controls - Full Width & Hover Effects */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%; /* Wider control areas */
+    height: 100%; /* Cover full image height */
+    top: 0;
+    transform: none;
+    opacity: 0; /* Initially transparent */
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for previous button */
+.carousel-control-prev:hover {
+    opacity: 1;
+    background: linear-gradient(to right, rgba(65, 105, 225, 0.3), transparent); /* Royal blue gradient */
+}
+
+/* Hover effect for next button */
+.carousel-control-next:hover {
+    opacity: 1;
+    background: linear-gradient(to left, rgba(65, 105, 225, 0.3), transparent); /* Royal blue gradient */
+}
+
+/* Control icons - zoom effect on hover */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    transform: scale(1.3); /* Enlarge icon on hover */
+}
+
+/* Fixed height for all carousel images */
+.car-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* For the carousel container */
+.car-card .carousel-fade {
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Enhanced favorite button styling */
+.car-card .favorite-button-container {
+    z-index: 1050;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.car-card .favorite-toggle {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 36px; /* Slightly larger button */
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.car-card .favorite-toggle:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+}
+
+.car-card .favorite-toggle i {
+    font-size: 18px; /* Slightly larger icon */
+}
+
+/* Make the entire card clickable while preserving hover effects */
+.car-card a.text-decoration-none {
+    position: relative;
+    z-index: 1;
+}
+
+/* Enhance card with subtle hover effect */
+.car-card {
+    height: 400px; /* Fixed height for the card */
+    margin-bottom: 50px; /* Margin bottom for spacing between cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}

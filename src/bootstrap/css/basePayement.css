@@ -1,0 +1,117 @@
+/* Styles pour la réception et le paiement en ligne - Basé sur le thème Suñu Otto */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0; /* Fond gris clair */
+    margin: 0; /* Réinitialise la marge par défaut */
+    padding: 0; /* Réinitialise le remplissage par défaut */
+}
+
+/* Style pour l'iframe du reçu */
+iframe {
+    width: 100%;
+    min-height: 600px;
+    border: 1px solid #4169E1; /* Bordure bleu royal */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+iframe:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Conteneur pour l'iframe */
+.receipt-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+    border-radius: 10px;
+    margin: 20px auto; /* Centre le conteneur horizontalement */
+    max-width: 1200px; /* Limite la largeur du conteneur */
+}
+
+/* Titre pour la section du reçu */
+.receipt-title {
+    color: #4169E1; /* Bleu royal */
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #4169E1; /* Bleu royal */
+    padding-bottom: 10px;
+}
+
+/* Styles pour la section de paiement en ligne */
+.online-payment-section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+    border-radius: 10px;
+    margin: 20px auto 30px; /* Centre le conteneur horizontalement et ajoute une marge en bas */
+    max-width: 1200px; /* Limite la largeur du conteneur */
+}
+
+.online-payment-title {
+    color: #4169E1; /* Bleu royal */
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid #4169E1; /* Bleu royal */
+    padding-bottom: 10px;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.qr-payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 200px;
+}
+
+.qr-payment-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.qr-logo img {
+    height: 100px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.payment-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4169E1; /* Bleu royal */
+}
+
+.payment-code {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Gradient background pour les sections spéciales */
+.gradient-custom {
+    background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
