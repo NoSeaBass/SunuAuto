@@ -17,6 +17,34 @@ d'utilisateurs :
 - Clients : réservation de véhicules, gestion des favoris, consultation de l'historique
 - Visiteurs : consultation du catalogue, inscription au service
 
+## Organisation des fichiers
+
+Le projet est organisé autour du dossier `src`, qui contient l'application web et tous les éléments nécessaires à son fonctionnement :
+
+```text
+locationvoiture/
+├── classes/        # Classes PHP : utilisateurs, clients, gérants, voitures, offres, réservations, etc.
+├── fonctions/      # Fonctions utilitaires : connexion à la base, chargements automatiques, affichage des cartes
+├── media/          # Images des véhicules et autres ressources multimédias
+├── sql/            # Scripts de création des tables et données d'exemple
+├── formulaires/    # Formulaires d'inscription, de connexion et d'ajout/modification
+├── bootstrap/      # Framework CSS/JavaScript utilisé localement pour la mise en page
+├── index.php       # Page d'accueil du catalogue
+├── traitement-gerant.php
+├── traitement-reservation.php
+└── ...
+```
+
+Cette organisation sépare les responsabilités du projet :
+
+- `classes/` contient les représentations des principales entités métier.
+- `fonctions/` rassemble les fonctions appelées par les différentes pages PHP.
+- `media/` contient les images utilisées par l'application.
+- `sql/` contient les scripts nécessaires pour créer et remplir la base de données.
+- `formulaires/` contient les formulaires d'inscription, de connexion et de gestion.
+- `bootstrap/` contient les fichiers CSS et JavaScript du framework Bootstrap utilisé pour l'interface.
+- Les fichiers PHP placés à la racine de `src/` correspondent aux principales pages et traitements de l'application.
+
 ## Essayer l'application en local
 
 Pour lancer SunuAuto sur votre propre machine, il vous faut PHP avec l'extension PDO MySQL, ainsi qu'un serveur MySQL. Vous pouvez installer ces outils séparément ou utiliser une solution tout-en-un comme [XAMPP](https://www.apachefriends.org/), qui inclut Apache, PHP et MySQL/MariaDB.
